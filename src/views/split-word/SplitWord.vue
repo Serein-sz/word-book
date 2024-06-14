@@ -27,7 +27,7 @@ async function handleSplitWord() {
         <a-textarea v-model:value="sentence" placeholder="Please enter the sentence" allow-clear />
         <a-button class="h-full w-20" type="primary" ghost :loading="loading" @click="handleSplitWord">Split</a-button>
       </a-flex>
-      <div class="flex-grow h-[calc(100vh-7rem)] overflow-scroll ">
+      <div class="flex-grow h-[calc(100vh-7rem)] overflow-auto overflow-x-hidden">
         <RightPanel :words="words" />
       </div>
     </div>
