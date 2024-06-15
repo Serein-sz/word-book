@@ -12,7 +12,6 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "@types/spark-md5": "^3.0.4",
     "ant-design-vue": "4.x",
     "axios": "^1.7.2",
     "pinia": "^2.1.7",
@@ -21,6 +20,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@types/spark-md5": "^3.0.4",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.0",
     "@vitejs/plugin-vue": "^5.0.4",

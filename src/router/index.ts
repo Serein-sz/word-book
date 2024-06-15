@@ -1,5 +1,6 @@
 import Login from '@/views/login/Login.vue'
 import Home from '@/views/home/Home.vue'
+import Main from '@/views/home/Main.vue'
 import SplitWord from '@/views/split-word/SplitWord.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
@@ -19,6 +20,10 @@ const router = createRouter({
       path: '/home',
       component: Home,
       children: [
+        {
+          path: '/home/main',
+          component: Main
+        },
         {
           path: '/home/split-word',
           component: SplitWord

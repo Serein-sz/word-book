@@ -2,7 +2,8 @@ import axios, { type AxiosInstance } from "axios";
 import { message } from 'ant-design-vue';
 
 function getToken() {
-  return localStorage.getItem("token");
+  const tokenName = localStorage.getItem("tokenName")
+  return localStorage.getItem(tokenName || "");
 }
 
 const axiosInstance: AxiosInstance = axios.create({

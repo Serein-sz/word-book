@@ -21,7 +21,6 @@ async function handleSplitWord() {
 
 </script>
 <template>
-  <div class="h-screen w-screen p-3">
     <div class="p-3 border border-gray-100/50 rounded-lg flex flex-col">
       <a-flex gap="middle" class="h-16">
         <a-textarea v-model:value="sentence" placeholder="Please enter the sentence" allow-clear />
@@ -31,6 +30,5 @@ async function handleSplitWord() {
         <RightPanel :words="words" />
       </div>
     </div>
-  </div>
 </template>
 <style scoped></style>

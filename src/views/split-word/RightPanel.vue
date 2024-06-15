@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Word, Words } from '@/types/words';
-import { ref, toRef, watch } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
   words: {

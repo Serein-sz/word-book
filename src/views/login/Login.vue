@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { login } from '@/api/auth';
+import type { UserDto } from '@/types/user';
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -15,11 +17,13 @@ const formState = reactive<FormState>({
 
 const router = useRouter()
 
-const onFinish = (values: any) => {
+const onFinish = async (userDto: UserDto) => {
+  await login(userDto)
   router.push('/home/split-word')
 };
 
 const onFinishFailed = (errorInfo: any) => {
+  console.log(errorInfo);
   console.log('Failed:', errorInfo);
 };
 
@@ -36,17 +40,16 @@ const onFinishFailed = (errorInfo: any) => {
         </span>
       </div>
     </div>
-    <a-form class="border mt-16 border-gray-100/50 p-10 rounded-lg " :model="formState" name="basic" autocomplete=" off"
+    <a-form class="border mt-16 border-gray-100/50 p-10 rounded-lg " :model="formState" name="login" autocomplete=" off"
       @finish="onFinish" @finishFailed="onFinishFailed">
       <a-form-item name="username" :rules="[{ required: true, message: 'Please input your username!' }]">
         <a-input v-model:value="formState.username" placeholder="username" />
       </a-form-item>
-
       <a-form-item name="password" :rules="[{ required: true, message: 'Please input your password!' }]">
         <a-input-password v-model:value="formState.password" placeholder="password"/>
       </a-form-item>
       <a-form-item class="flex justify-center">
-        <a-button html-type="submit"  class="w-full" >Login</a-button>
+        <a-button html-type="submit" class="w-full" >Login</a-button>
       </a-form-item>
     </a-form>
   </div>
